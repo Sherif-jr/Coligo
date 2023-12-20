@@ -6,11 +6,11 @@ import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const isLoggedIn = useSelector(
-    (state: { auth: { isLoggedIn: boolean } }) => state.auth.isLoggedIn
+    (state: { root: { auth: { isLoggedIn: boolean } } }) =>
+      state.root.auth.isLoggedIn
   );
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log(isLoggedIn);
 
   useEffect(() => {
     if (isLoggedIn) {

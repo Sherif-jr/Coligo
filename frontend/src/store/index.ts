@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import backendApi from "./api-slice";
 import {
   persistReducer,
@@ -12,16 +12,21 @@ import {
 import storage from "redux-persist/lib/storage";
 import authSlice from "./auth-slice";
 import { UISlice } from "./ui-slice";
+import langSlice from "./lang-Slice";
 
 const persistConfig = {
   key: "coligo",
   storage,
 };
-const persistedReducer = persistReducer(persistConfig, authSlice);
+const rootReducer = combineReducers({
+  auth: authSlice,
+  lang: langSlice,
+});
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
   reducer: {
-    auth: persistedReducer,
+    root: persistedReducer,
     ui: UISlice.reducer,
     [backendApi.reducerPath]: backendApi.reducer,
   },

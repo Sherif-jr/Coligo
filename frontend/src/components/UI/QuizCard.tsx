@@ -3,7 +3,9 @@ import { Button } from "@mui/material";
 import { FC } from "react";
 import Quiz from "../../interfaces/Quiz.interface";
 import dateTime from "../../utils/dateTime";
+import { useTranslation } from "react-i18next";
 const QuizCard: FC<{ quiz: Quiz }> = ({ quiz }) => {
+  const { t } = useTranslation();
   return (
     <div>
       <div className="flex gap-2">
@@ -19,7 +21,7 @@ const QuizCard: FC<{ quiz: Quiz }> = ({ quiz }) => {
           {dateTime(quiz.dueDate)}
         </p>
       </div>
-      <Button variant="outlined">Start Quiz</Button>
+      <Button variant="outlined">{t("startQuiz")}</Button>
     </div>
   );
 };

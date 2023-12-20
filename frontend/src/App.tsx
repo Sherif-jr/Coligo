@@ -1,22 +1,20 @@
-import { Provider } from "react-redux";
+import { useSelector } from "react-redux";
 import "./App.css";
 import router from "./routes";
-import store from "./store";
 import { RouterProvider } from "react-router-dom";
-import { PersistGate } from "redux-persist/integration/react";
-import persistStore from "redux-persist/es/persistStore";
-import LoadingBar from "./components/UI/LoadingBar";
 
-const persistor = persistStore(store);
+import i18n from "./utils/i18n";
+import { useEffect } from "react";
+import { LangState } from "./store/lang-Slice";
 
 function App() {
-  return (
-    <Provider store={store}>
-      <PersistGate loading={<LoadingBar />} persistor={persistor}>
-        <RouterProvider router={router} />
-      </PersistGate>
-    </Provider>
+  const lang = useSelector(
+    (state: { root: { lang: LangState } }) => state.root.lang.lang
   );
+  useEffect(() => {
+    i18n.changeLanguage(lang);
+  }, [lang]);
+  return <RouterProvider router={router} />;
 }
 
 export default App;

@@ -8,8 +8,10 @@ import {
 import QiuzCard from "../../components/UI/QuizCard";
 import Card from "../../components/UI/Card";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Dashboard = () => {
+  const { t } = useTranslation();
   const { data: quizzes, isLoading: isQuizLoading } = useGetAllQuizzesQuery();
   const { data: announcements, isLoading: isAnnLoading } =
     useGetAllAnnouncementsQuery();
@@ -26,21 +28,18 @@ const Dashboard = () => {
           >
             <div className="py-4 ps-4">
               <Typography variant="h3" sx={{ fontWeight: "bold" }} mb={1}>
-                EXAM TIME
+                {t("examTime").toUpperCase()}
               </Typography>
-              <Typography mb={3}>
-                Here we are, Are you ready to fight? Don't worry, we prepared
-                some tips to be ready for your exams.
-              </Typography>
+              <Typography mb={3}>{t("mainCaption")}</Typography>
               <Typography variant="caption" sx={{ color: "gray" }}>
-                "Nothing happens until something moves" - Albert Einstein
+                {t("qoute")}
               </Typography>
               <Button
                 variant="contained"
                 size="large"
                 sx={{ display: "block", mt: 2 }}
               >
-                View exam tips
+                {t("ViewExamTips")}
               </Button>
             </div>
             <div className="relative">
@@ -63,7 +62,7 @@ const Dashboard = () => {
                   sx={{ fontWeight: "bold" }}
                   component="h4"
                 >
-                  Announcements
+                  {t("announcements")}
                 </Typography>
                 <Typography variant="caption" sx={{ color: "gray" }}>
                   Lorem ipsum dolor sit.
@@ -75,7 +74,7 @@ const Dashboard = () => {
                 component={Link as React.ElementType}
                 to="/dashboard/announcement/all"
               >
-                All
+                {t("all")}
               </Button>
             </div>
             {announcements?.map((announcement) => (
@@ -93,7 +92,7 @@ const Dashboard = () => {
                   sx={{ fontWeight: "bold" }}
                   component="h4"
                 >
-                  What's due
+                  {t("WhatsDue")}
                 </Typography>
                 <Typography variant="caption" sx={{ color: "gray" }}>
                   Lorem ipsum dolor sit.
@@ -105,10 +104,10 @@ const Dashboard = () => {
                 component={Link as React.ElementType}
                 to="/dashboard/quiz/all"
               >
-                All
+                {t("all")}
               </Button>
             </div>
-            <div>
+            <div className="flex flex-col gap-4">
               {quizzes?.map((quiz) => (
                 <QiuzCard key={quiz._id} quiz={quiz} />
               ))}

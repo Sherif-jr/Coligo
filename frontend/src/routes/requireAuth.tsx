@@ -7,7 +7,8 @@ export type RequireAuthProps = {
 
 const RequireAuth = ({ children }: RequireAuthProps) => {
   const isLoggedIn = useSelector(
-    (state: { auth: { isLoggedIn: boolean } }) => state.auth.isLoggedIn
+    (state: { root: { auth: { isLoggedIn: boolean } } }) =>
+      state.root.auth.isLoggedIn
   );
   const location = useLocation();
 
