@@ -18,11 +18,20 @@ export const addNewAnnouncement = tryCatchErr(
     res.json({ success: true, data: announcement });
   }
 );
+
 export const deleteAnnouncement = tryCatchErr(
   /** @type {import("express").RequestHandler} */
   async (req, res) => {
     const id = req.params.id;
     const announcement = await announcementDao.deleteAnnouncement(id);
+    res.json({ success: true, data: announcement });
+  }
+);
+export const editAnnouncement = tryCatchErr(
+  /** @type {import("express").RequestHandler} */
+  async (req, res) => {
+    const id = req.params.id;
+    const announcement = await announcementDao.editAnnouncement(id, req.body);
     res.json({ success: true, data: announcement });
   }
 );

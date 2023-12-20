@@ -16,7 +16,7 @@ export default class AnnouncementDao {
    * @param {string} id
    * @param {{subject: string,content: string, by: string}} announcement
    */
-  async editQuiz(id, announcement) {
+  async editAnnouncement(id, announcement) {
     return await AnnouncementModel.findByIdAndUpdate(id, announcement, {
       new: true,
     });

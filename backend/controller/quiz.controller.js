@@ -24,3 +24,11 @@ export const deleteQuiz = tryCatchErr(
     res.json({ success: true, data: quize });
   }
 );
+export const editQuiz = tryCatchErr(
+  /** @type {import("express").RequestHandler} */
+  async (req, res) => {
+    const id = req.params.id;
+    const announcement = await quizDao.editQuiz(id, req.body);
+    res.json({ success: true, data: announcement });
+  }
+);
