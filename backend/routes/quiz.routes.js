@@ -11,7 +11,6 @@ import {
 } from "../middleware/joiValidator.js";
 import { quizSchema } from "../joi/quiz.joi.js";
 import { idSchema } from "../joi/id.joi.js";
-import { announcementSchema } from "../joi/announcement.joi.js";
 
 const router = Router();
 
@@ -21,7 +20,7 @@ router.delete("/:id", joiValidatorParams(idSchema), deleteQuiz);
 router.put(
   "/:id",
   joiValidatorParams(idSchema),
-  joiValidatorBody(announcementSchema),
+  joiValidatorBody(quizSchema),
   editQuiz
 );
 
