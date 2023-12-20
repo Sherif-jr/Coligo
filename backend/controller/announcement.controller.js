@@ -1,5 +1,5 @@
-import AnnouncementDao from "../db/dao/announcement.dao";
-import tryCatchErr from "../middleware/tryCatchErr";
+import AnnouncementDao from "../db/dao/announcement.dao.js";
+import tryCatchErr from "../middleware/tryCatchErr.js";
 
 const announcementDao = new AnnouncementDao();
 

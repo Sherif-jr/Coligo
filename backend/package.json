@@ -7,8 +7,8 @@
   "author": "Abdelrhman Sherif",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --experimental-specifier-resolution=node index.js",
-    "start": "node --experimental-specifier-resolution=node index.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "dependencies": {
     "cli-color": "^2.0.3",

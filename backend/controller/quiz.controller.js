@@ -1,5 +1,5 @@
-import QuizDao from "../db/dao/quiz.dao";
-import tryCatchErr from "../middleware/tryCatchErr";
+import QuizDao from "../db/dao/quiz.dao.js";
+import tryCatchErr from "../middleware/tryCatchErr.js";
 const quizDao = new QuizDao();
 export const getAllQuizzes = tryCatchErr(
   /** @type {import("express").RequestHandler} */

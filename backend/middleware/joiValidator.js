@@ -1,4 +1,4 @@
-import tryCatchErr from "./tryCatchErr";
+import tryCatchErr from "./tryCatchErr.js";
 
 export function joiValidatorBody(schema) {
   return tryCatchErr(async (req, res, next) => {

@@ -1,4 +1,4 @@
-import quizModel from "../models/quiz.model";
+import quizModel from "../models/quiz.model.js";
 
 export default class QuizDao {
   /**

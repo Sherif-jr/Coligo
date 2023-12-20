@@ -4,13 +4,14 @@ import {
   deleteQuiz,
   editQuiz,
   getAllQuizzes,
-} from "../controller/quiz.controller";
+} from "../controller/quiz.controller.js";
 import {
   joiValidatorBody,
   joiValidatorParams,
-} from "../middleware/joiValidator";
-import { quizSchema } from "../joi/quiz.joi";
-import { idSchema } from "../joi/id.joi";
+} from "../middleware/joiValidator.js";
+import { quizSchema } from "../joi/quiz.joi.js";
+import { idSchema } from "../joi/id.joi.js";
+import { announcementSchema } from "../joi/announcement.joi.js";
 
 const router = Router();
 

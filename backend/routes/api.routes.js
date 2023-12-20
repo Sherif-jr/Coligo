@@ -1,6 +1,6 @@
 import { Router } from "express";
-import quizRoutes from "./quiz.routes";
-import announcementRoutes from "./announcement.routes";
+import quizRoutes from "./quiz.routes.js";
+import announcementRoutes from "./announcement.routes.js";
 
 const router = Router();
 router.use("/quiz", quizRoutes);

@@ -2,15 +2,15 @@ import { Router } from "express";
 import {
   joiValidatorBody,
   joiValidatorParams,
-} from "../middleware/joiValidator";
-import { idSchema } from "../joi/id.joi";
-import { announcementSchema } from "../joi/announcement.joi";
+} from "../middleware/joiValidator.js";
+import { idSchema } from "../joi/id.joi.js";
+import { announcementSchema } from "../joi/announcement.joi.js";
 import {
   addNewAnnouncement,
   deleteAnnouncement,
   editAnnouncement,
   getAllAnnouncements,
-} from "../controller/announcement.controller";
+} from "../controller/announcement.controller.js";
 
 const router = Router();
 

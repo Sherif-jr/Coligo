@@ -1,4 +1,4 @@
-import AnnouncementModel from "../models/announcement.model";
+import AnnouncementModel from "../models/announcement.model.js";
 
 export default class AnnouncementDao {
   /**
