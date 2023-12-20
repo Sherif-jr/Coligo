@@ -97,7 +97,7 @@ function Header() {
       <Box display="flex" alignItems="center">
         <FormControl
           variant="outlined"
-          sx={{ display: { xs: "none", sm: "inline-flex" } }}
+          sx={{ display: { xs: "none", sm: "inline-flex" }, marginRight: 2 }}
         >
           <Input placeholder="Search" startAdornment={<SearchTwoToneIcon />} />
         </FormControl>
