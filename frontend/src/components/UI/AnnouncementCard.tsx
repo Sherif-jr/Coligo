@@ -7,12 +7,19 @@ const AnnouncementCard: FC<{ announcement: Announcement }> = ({
   announcement,
 }) => {
   return (
-    <div className="flex flex-row w-full items-center justify-between py-2">
+    <div
+      className="flex flex-row w-full items-center justify-between py-2"
+      data-testid="announcement-card"
+    >
       <div className="w-1/2 sm:w-1/3 flex flex-row items-center gap-2 justify-start">
         <Avatar />
         <div>
-          <h6 className=" text-sm md:text-base font-bold">{announcement.by}</h6>
-          <p className="text-xs text-gray-500">{announcement.subject}</p>
+          <h6 className=" text-sm md:text-base font-bold" data-testid="an-by">
+            {announcement.by}
+          </h6>
+          <p className="text-xs text-gray-500" data-testid="an-subject">
+            {announcement.subject}
+          </p>
         </div>
       </div>
       <div className="mx-2 h-[30px]">
@@ -20,7 +27,7 @@ const AnnouncementCard: FC<{ announcement: Announcement }> = ({
       </div>
 
       <div className="grow">
-        <p className="text-xs md:text-base">
+        <p className="text-xs md:text-base" data-testid="an-content">
           {textClip(announcement.content, 110)}
         </p>
       </div>

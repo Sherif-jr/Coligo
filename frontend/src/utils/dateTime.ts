@@ -6,8 +6,6 @@ const dateTime = (date: Date | string) => {
 
   const timeNoSeconds = timeStrArr.join("");
 
-  console.log(timeStrArr);
-
   return `${dateString} - ${timeNoSeconds}`;
 };
 export default dateTime;
